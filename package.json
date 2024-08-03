@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/vigneshwaran-chandrasekaran/AI-playground/issues"
   },
-  "homepage": "https://github.com/vigneshwaran-chandrasekaran/AI-playground#readme"
+  "homepage": "https://github.com/vigneshwaran-chandrasekaran/AI-playground#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "openai": "^4.54.0"
+  }
 }
