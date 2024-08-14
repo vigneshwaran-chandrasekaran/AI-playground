@@ -8,9 +8,9 @@ const getModels = async () => {
   return await groq.models.list();
 };
 
-getModels().then((models) => {
-  console.log(models);
-});
+// getModels().then((models) => {
+//   console.log(models);
+// });
 
 export async function main() {
   const chatCompletion = await getGroqChatCompletion();
@@ -25,11 +25,12 @@ export async function getGroqChatCompletion() {
     messages: [
       {
         role: "user",
-        content: "Explain the importance of fast language models",
+        // content: "Explain the importance of fast language models",
+        content: "Tell me about trichy morais city",
       },
     ],
     model: "llama3-8b-8192",
   });
 }
 
-// main();
+main();
