@@ -1,10 +1,12 @@
 {
-  "name": "ai-playground",
+  "name": "local-rag-system",
   "version": "1.0.0",
-  "description": "OpenAI, Gemini",
+  "description": "Local RAG Application with Ollama, Mistral, and Vector Database",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "node index.js"
   },
   "type": "module",
   "repository": {
@@ -19,7 +21,9 @@
   "homepage": "https://github.com/vigneshwaran-chandrasekaran/AI-playground#readme",
   "dependencies": {
     "dotenv": "^16.4.5",
-    "groq-sdk": "^0.5.0",
-    "openai": "^4.54.0"
+    "axios": "^1.6.0",
+    "chroma-js": "^2.4.2",
+    "pdf-parse": "^1.1.1",
+    "express": "^4.18.2"
   }
 }
