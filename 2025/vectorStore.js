@@ -1,6 +1,9 @@
 import fs from "fs";
 import path from "path";
 import { spawn } from "child_process";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /**
  * Simple in-memory vector database
@@ -83,7 +86,12 @@ export class VectorStore {
    */
   async generateEmbedding(text) {
     return new Promise((resolve, reject) => {
-      const python = spawn("python3", ["./embeddings_server.py"]);
+      const pythonScript = path.join(__dirname, "embeddings_server.py");
+      // Use python from venv if available, otherwise system python3
+      const pythonCmd = process.env.VIRTUAL_ENV 
+        ? path.join(process.env.VIRTUAL_ENV, "bin", "python3")
+        : "python3";
+      const python = spawn(pythonCmd, [pythonScript]);
       let output = "";
       let error = "";
 
